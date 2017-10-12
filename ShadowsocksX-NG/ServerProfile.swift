@@ -222,17 +222,11 @@ class ServerProfile: NSObject, NSCopying {
                 return true
             }
 
-            return false;
+            return false
         }
 
         func validateDomainName(_ value: String) -> Bool {
-            let validHostnameRegex = "^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\\-]*[a-zA-Z0-9])\\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\\-]*[A-Za-z0-9])$"
-
-            if (value.range(of: validHostnameRegex, options: .regularExpression) != nil) {
-                return true
-            } else {
-                return false
-            }
+            return true
         }
 
         if !(validateIpAddress(serverHost) || validateDomainName(serverHost)){
